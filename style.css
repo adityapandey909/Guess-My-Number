@@ -3,77 +3,87 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
-  background-color: #222;
-  /* background-color: #60b347; */
+  background: radial-gradient(circle at top, #333, #111);
+  min-height: 100vh;
+  transition: background 0.5s ease;
 }
 
-/* LAYOUT */
+/* ================= LAYOUT ================= */
 header {
   position: relative;
   height: 35vh;
-  border-bottom: 7px solid #eee;
+  border-bottom: 5px solid #eee;
 }
 
 main {
   height: 65vh;
-  color: #eee;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 4rem;
+}
+
+.left,
+.right {
+  width: 52rem;
 }
 
 .left {
-  width: 52rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .right {
-  width: 52rem;
   font-size: 2rem;
 }
 
-/* ELEMENTS STYLE */
+/* ================= HEADINGS ================= */
 h1 {
-  font-size: 4rem;
+  font-size: 4.2rem;
   text-align: center;
   position: absolute;
   width: 100%;
   top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
+  letter-spacing: 0.3rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
+/* ================= NUMBER BOX ================= */
 .number {
   background: #eee;
-  color: #333;
-  font-size: 6rem;
-  width: 15rem;
-  padding: 3rem 0rem;
+  color: #222;
+  font-size: 6.5rem;
+  width: 16rem;
+  padding: 3rem 0;
   text-align: center;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
+/* ================= HEADER INFO ================= */
 .between {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   position: absolute;
   top: 2rem;
   right: 2rem;
+  opacity: 0.8;
 }
 
 .again {
@@ -82,38 +92,61 @@ h1 {
   left: 2rem;
 }
 
+/* ================= INPUT ================= */
 .guess {
-  background: none;
+  background: transparent;
   border: 4px solid #eee;
+  border-radius: 0.6rem;
   font-family: inherit;
-  color: inherit;
+  color: #eee;
   font-size: 5rem;
-  padding: 2.5rem;
-  width: 25rem;
+  padding: 2.2rem;
+  width: 26rem;
   text-align: center;
-  display: block;
   margin-bottom: 3rem;
+  transition: all 0.3s ease;
 }
 
+.guess:focus {
+  outline: none;
+  border-color: #60b347;
+  box-shadow: 0 0 15px rgba(96, 179, 71, 0.7);
+}
+
+/* ================= BUTTONS ================= */
 .btn {
   border: none;
+  border-radius: 0.6rem;
   background-color: #eee;
   color: #222;
   font-size: 2rem;
   font-family: inherit;
-  padding: 2rem 3rem;
+  padding: 2rem 3.5rem;
   cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 0 #aaa;
 }
 
 .btn:hover {
   background-color: #ccc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #999;
 }
 
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #777;
+}
+
+/* ================= TEXT ================= */
 .message {
-  margin-bottom: 8rem;
-  height: 3rem;
+  margin-bottom: 6rem;
+  min-height: 3rem;
+  font-size: 2.1rem;
 }
 
-.label-score {
-  margin-bottom: 2rem;
+.label-score,
+.label-highscore {
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
 }
